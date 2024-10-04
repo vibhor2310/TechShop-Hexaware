@@ -2,10 +2,7 @@ package main;
 
 import dao.Impl.InventoryDAOImpl;
 import dao.InventoryDAO;
-import entity.Product;
 import exception.InvalidDataException;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class InventoryMain {
@@ -13,7 +10,6 @@ public class InventoryMain {
 
     public boolean inventorySectionDetails(){
         Scanner sc = new Scanner(System.in);
-        Product product = null;
         while (true){
             System.out.println("\n----------Inventory Section------------");
             System.out.println("1. getProduct");

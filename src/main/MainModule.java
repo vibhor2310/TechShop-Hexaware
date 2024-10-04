@@ -1,9 +1,5 @@
 package main;
 
-import dao.CustomerDAO;
-import dao.Impl.CustomerDAOImpl;
-import exception.AuthorizationException;
-
 import java.util.Scanner;
 
 public class MainModule {

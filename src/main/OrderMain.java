@@ -36,7 +36,7 @@ public class OrderMain {
                     System.out.println("Enter the Order Id: ");
                     int orderId2 = sc.nextInt();
                     System.out.println("Enter New Order status");
-                    String newStatus = sc.nextLine();
+                    String newStatus = sc.next();
                     try {
                         orderDao.updateOrderStatus(orderId2, newStatus);
                     } catch (InvalidDataException e){
