@@ -210,6 +210,7 @@ public class InventoryDAOImpl implements InventoryDAO {
             connection = DBConn.getMyDbConnection();
             String query = "SELECT sum(Inventory.QuantityInStock * Products.Price) as TotalValue FROM Inventory INNER JOIN Products ON Inventory.ProductID = Products.ProductID";
             preparedStatement = connection.prepareStatement(query);
+            resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
 
 

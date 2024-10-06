@@ -117,7 +117,7 @@ public class CustomerDAOImpl implements CustomerDAO {
             preparedStatement.setString(2, customer.getFirstName());
             preparedStatement.setString(3, customer.getLastName());
             preparedStatement.setString(4, customer.getEmail());
-            preparedStatement.setString(5, customer.getEmail());
+            preparedStatement.setString(5, customer.getPhone());
             preparedStatement.setString(6, customer.getAddress());
 
             int rowsAffected = preparedStatement.executeUpdate();

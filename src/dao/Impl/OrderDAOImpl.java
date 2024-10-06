@@ -44,9 +44,10 @@ public class OrderDAOImpl implements OrderDAO {
     public void getOrderDetails(int orderID) {
         try{
             connection = DBConn.getMyDbConnection();
-            String query = "SELECT * FROM orders WHERE OrderID = ?";
+            String query = "SELECT * FROM Orders WHERE OrderID = ?";
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1,orderID);
+            resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 System.out.println("Order Details for Order ID: " + orderID);
                 System.out.println("Customer ID: " + resultSet.getInt("CustomerID"));
