@@ -3,7 +3,6 @@ package util;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
@@ -21,7 +20,8 @@ public class DBConn {
             String url = properties.getProperty("db.url");
             String name = properties.getProperty("db.username");
             String password = properties.getProperty("db.password");
-//            Class.forName(Driver);
+            String driver = properties.getProperty("db.driver");
+            Class.forName(driver);
             conn = DriverManager.getConnection(url, name, password);
         }  catch (SQLException e) {
 
@@ -29,6 +29,8 @@ public class DBConn {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return conn;
